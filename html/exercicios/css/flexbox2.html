@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container{
+            display: flex;/*line é o padrão*/
+            /*flex-direction: column;/*line é o padrão*/
+            height: 300px;
+            width: 600px;
+
+        }
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            order: 1;/*o elemento passa a ocupar a ultima posição*/
+            order: 0;/*o elemento ocupa a posição original que foi declarado*/
+            order: -1;/*o elemento ocupa a primeira posição significa que ele possui a menor ordem*/
+            align-self: center;/*alinha somente este elemento no centro*/
+            align-self: flex-end;/*alinha somente este elemento no final*/
+            align-self: flex-start;/*alinha somente este elemento no inicio*/
+            align-self: stretch;/*padrão*/
+        }
+
+        .flex-container div{
+            width: 100px;
+            flex-grow: 0;
+            flex-grow: 1;/*dimensiona os elementos com tamanhos iguais no sentido horizontal*/
+        }
+        .flex-container div:nth-child(1){
+            flex-grow: 2;/*o elemento 1 toma o espaço deixado pelos outros*/
+        }
+        .flex-container{
+            width: 100px;/*reduzindo a largura do container*/
+            flex-shrink: 1;/*diminui o tamanho dos elementos*/
+        }
+
+        .flex-container div:nth-child(1){
+            flex-shrink: 2;/*reduzindo o tamanho de um dos elementos 3 vezes mais que os outros elementos*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <!--
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>-->
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

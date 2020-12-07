@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* Em linhas gerais 
+         1.Regras com !important - evitar o seu uso - pois o seu uso pode ser imprevisivel pois ele tem prioridade sobre tudo
+         2.Seletores mais especificos
+         3.Última regra processada tem maior prioridade, exceto se a propriedade da primeira for mais especifica. 
+         Exemplo: <p class='observacao'>Olha essa observação!!!!</p> aplicação de uma regra de classe na observação 
+         terá prioridade sobre aplicação de regra sobre a tag p independente da ordem das mesmas no css
+         4.
+        
+        */
+        p {
+            background-color: #aaa;
+        }
+
+        .observacao{
+            background-color: #5f5;
+            border: dashed 5px green;
+            padding: 200px!important;
+            font-size: 200px;
+            text-align: center;
+
+        }
+        p.observacao{/*maior nível de especificidade*/
+            padding: 2px;
+            background: linear-gradient(#95002D, white, green);
+            /*background: line(rgb(107, 16, 72), white, green);*/
+        }
+
+        .outraopcao{
+            background-color: #5f5;
+            border: dashed 5px green;
+            padding: 200px!important;
+            font-size: 200px;
+            text-align: center;
+
+        }
+
+        p.outraopcao{/*maior nível de especificidade*/
+            padding: 2px;
+            background: linear-gradient(to right, #95002D, white, green);
+            /*background: line(rgb(107, 16, 72), white, green);*/
+        }
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>FLUZÃO!!!!</p>
+    <p class='outraopcao'>FLUZÃO!!!!</p>
+</body>
+
+</html>

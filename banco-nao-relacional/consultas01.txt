@@ -1,0 +1,87 @@
+MongoDB Enterprise > db.estados.findOne()
+{
+        "_id" : ObjectId("5fcb898df157999584551686"),
+        "nome" : "Acre",
+        "sigla" : "AC",
+        "regiao" : "Norte"
+}
+MongoDB Enterprise > db.estados.findOne(sigla: "RJ")
+2020-12-05T10:56:59.394-0300 E QUERY    [js] SyntaxError: missing ) after argument list @(shell):1:24
+MongoDB Enterprise > db.estados.findOne({sigla: "RJ"})
+{
+        "_id" : ObjectId("5fcb8b07f157999584551688"),
+        "nome" : "Rio de Janeiro",
+        "sigla" : "RJ",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "nome" : "Niteroi",
+                        "area" : 133.9,
+                        "populacao" : 487562
+                }
+        ]
+}
+MongoDB Enterprise > db.estados.find({sigla: "RJ"}).pretty()
+{
+        "_id" : ObjectId("5fcb8b07f157999584551688"),
+        "nome" : "Rio de Janeiro",
+        "sigla" : "RJ",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "nome" : "Niteroi",
+                        "area" : 133.9,
+                        "populacao" : 487562
+                }
+        ]
+}
+MongoDB Enterprise > db.estados.find({$or: [{sigla: "RJ"},{sigla: "AC"}]}).pretty()
+{
+        "_id" : ObjectId("5fcb898df157999584551686"),
+        "nome" : "Acre",
+        "sigla" : "AC",
+        "regiao" : "Norte"
+}
+{
+        "_id" : ObjectId("5fcb8b07f157999584551688"),
+        "nome" : "Rio de Janeiro",
+        "sigla" : "RJ",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "nome" : "Niteroi",
+                        "area" : 133.9,
+                        "populacao" : 487562
+                }
+        ]
+}
+MongoDB Enterprise > db.estados.find({populacao: {$exists: true}})
+{ "_id" : ObjectId("5fcb89dbf157999584551687"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+MongoDB Enterprise > db.estados.find({populacao: {$exists: true}}).pretty()
+{
+        "_id" : ObjectId("5fcb89dbf157999584551687"),
+        "nome" : "Alagoas",
+        "sigla" : "AL",
+        "regiao" : "Nordeste",
+        "populacao" : 3322000
+}
+MongoDB Enterprise > db.estados.find()
+{ "_id" : ObjectId("5fcb898df157999584551686"), "nome" : "Acre", "sigla" : "AC", "regiao" : "Norte" }
+{ "_id" : ObjectId("5fcb89dbf157999584551687"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+{ "_id" : ObjectId("5fcb8b07f157999584551688"), "nome" : "Rio de Janeiro", "sigla" : "RJ", "regiao" : "Sudeste", "cidades" : [ { "nome" : "Niteroi", "area" : 133.9, "populacao" : 487562 } ] }
+{ "_id" : ObjectId("5fcb9035f15799958455168c"), "nome" : "São Paulo", "sigla" : "SP", "regiao" : "Sudeste", "cidades" : [ { "_id" : ObjectId("5fcb9035f157999584551689"), "nome" : "Campinas", "area" : 795.7, "prefeito" : "Jonas Donizette", "populacao" : 1081000 }, { "_id" : ObjectId("5fcb9035f15799958455168a"), "nome" : "Guarulhos", "populacao" : 1325000 }, { "_id" : ObjectId("5fcb9035f15799958455168b"), "nome" : "Sorocaba", "distanciaCapital" : 87, "populacao" : 644919 } ] }
+MongoDB Enterprise > db.estados.find().skip(1)
+{ "_id" : ObjectId("5fcb89dbf157999584551687"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+{ "_id" : ObjectId("5fcb8b07f157999584551688"), "nome" : "Rio de Janeiro", "sigla" : "RJ", "regiao" : "Sudeste", "cidades" : [ { "nome" : "Niteroi", "area" : 133.9, "populacao" : 487562 } ] }
+{ "_id" : ObjectId("5fcb9035f15799958455168c"), "nome" : "São Paulo", "sigla" : "SP", "regiao" : "Sudeste", "cidades" : [ { "_id" : ObjectId("5fcb9035f157999584551689"), "nome" : "Campinas", "area" : 795.7, "prefeito" : "Jonas Donizette", "populacao" : 1081000 }, { "_id" : ObjectId("5fcb9035f15799958455168a"), "nome" : "Guarulhos", "populacao" : 1325000 }, { "_id" : ObjectId("5fcb9035f15799958455168b"), "nome" : "Sorocaba", "distanciaCapital" : 87, "populacao" : 644919 } ] }
+MongoDB Enterprise > db.estados.find().skip(1).limit(2)
+{ "_id" : ObjectId("5fcb89dbf157999584551687"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+{ "_id" : ObjectId("5fcb8b07f157999584551688"), "nome" : "Rio de Janeiro", "sigla" : "RJ", "regiao" : "Sudeste", "cidades" : [ { "nome" : "Niteroi", "area" : 133.9, "populacao" : 487562 } ] }
+MongoDB Enterprise > db.estados.count()
+4
+MongoDB Enterprise > db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1})
+{ "_id" : ObjectId("5fcb9035f15799958455168c"), "nome" : "São Paulo", "sigla" : "SP" }
+MongoDB Enterprise > db.estados.find({sigla: "SP"}, {nome: 1, sigla: 1, _id: 0})
+{ "nome" : "São Paulo", "sigla" : "SP" }
+MongoDB Enterprise > db.estados.find({sigla: "SP"}, {"cidades.nome": 1, _id: 0})
+{ "cidades" : [ { "nome" : "Campinas" }, { "nome" : "Guarulhos" }, { "nome" : "Sorocaba" } ] }

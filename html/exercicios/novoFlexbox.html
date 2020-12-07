@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex e Grid Box</title>
+    <style>
+        body,
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.2rem;
+            font-family: Arial;
+        }
+
+        body {
+            margin-bottom: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        video {
+            max-width: 100%;
+            display: block;
+        }
+
+        header {
+            background: #1d1e20;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 10px;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 10px;
+        }
+
+        /*CSS Flexbox*/
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flex>div {
+            flex: 1 1 200px;
+            margin: 10px;
+        }
+
+        /*GRID layout 1 */
+
+        .grid1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            /*grid-template-columns: repeat(3, 1fr); dará o mesmo efeito da linha acima*/
+            max-width: 800px;
+            padding: 10px;
+            margin: 0 auto;
+            grid-gap: 20px;
+        }
+
+        .grid1>div:nth-child(n+4) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+            align-items: center;
+
+        }
+
+        .grid1>div.anuncio {
+            background: gray;
+            grid-column: 1;
+            grid-row: 2 / 5;
+            display: block;
+            order: -1;
+        }
+
+        @media(max-width: 600px) {
+            .grid1 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid>div:nth-child(n+4) {
+                display: block;
+            }
+
+            .grid1>div.anuncio {
+                grid-column: auto;
+                grid-row: auto;
+            }
+        }
+
+        /*GRID layout 2 */
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            max-width: 800px;
+            padding: 10px;
+            margin: 0 auto;
+            grid-gap: 20px;
+        }
+
+        .sidebar>div {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: flex;
+                overflow: scroll;
+            }
+
+            .sidebar>div {
+                flex: 1 0 100px;
+                margin: 0 10px;
+            }
+
+        }
+
+        /*GRID layout 3 */
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 10px;
+
+        }
+        .item:nth-child(1){
+            grid-row: 1 / 3;
+
+        }
+
+        .item{
+            display: grid;
+        }
+
+        .item img{
+            grid-column: 1;
+            grid-row: 1/3;
+            align-self: end;
+        }
+
+        .item p{
+            background: rgba(0,0,0,.6);
+            padding: 10px;
+            color: white;
+            grid-column: 1;
+            grid-row: 2;
+            align-self: end;
+        }
+
+        @media (max-width: 600px) {
+            .grid3 {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/">Logo</a>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Sobre</a></li>
+                <li><a href="/">Produtos</a></li>
+                <li><a href="/">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Section Flexbox</h1>
+
+    <section class="flex">
+        <div>
+            <img src="../exercicios/midia/fotos/2.jpg">
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/3.jpg">
+            <p>Meus amores</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/4.jpg">
+            <p>Eu e meus amores</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/5.jpg">
+            <p>Eu e meu amorzinho</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/2.jpg">
+            <p>Eu e meu amorzão</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/3.jpg">
+            <p>Meus amores</p>
+        </div>
+    </section>
+
+    <h1>Section GridLayout 1</h1>
+
+    <section class="grid1">
+        <div>
+            <img src="../exercicios/midia/fotos/2.jpg">
+            <p>Eu e meu amorzão</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/3.jpg">
+            <p>Meus amores</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/4.jpg">
+            <p>Eu e meus amores</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/5.jpg">
+            <p>Eu e meu amorzinho</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/2.jpg">
+            <p>Eu e meu amorzão</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/3.jpg">
+            <p>Meus amores</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/5.jpg">
+            <p>Eu e meu amorzinho</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/2.jpg">
+            <p>Eu e meu amorzão</p>
+        </div>
+        <div>
+            <img src="../exercicios/midia/fotos/3.jpg">
+            <p>Meus amores</p>
+        </div>
+        <div class="anuncio">
+            <img src="../exercicios/midia/fotos/2.jpg">
+            <p>Eu e meu amorzão</p>
+        </div>
+    </section>
+
+    <h1>Section GridLayout 2</h1>
+
+    <section class="grid2">
+        <div class="video">
+            <video controls controlsList="nodownload">
+                <source src="../exercicios/midia/videos/venio.mp4" type="video/mp4">
+                Seu Browser não suporta a tag vídeo
+            </video>
+            <h2>Minhas aventuras de mountain bike</h2>
+        </div>
+        <div class="sidebar">
+            <div>
+                <img src="../exercicios/midia/fotos/3.jpg">
+                <p>Meus amores</p>
+            </div>
+            <div>
+                <img src="../exercicios/midia/fotos/4.jpg">
+                <p>Eu e meus amores</p>
+            </div>
+            <div>
+                <img src="../exercicios/midia/fotos/5.jpg">
+                <p>Eu e meu amorzinho</p>
+            </div>
+            <div>
+                <img src="../exercicios/midia/fotos/2.jpg">
+                <p>Eu e meu amorzão</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <h1>Section GridLayout 3</h1>
+
+    <section class="grid3">
+        <div class="item">
+            <img src="../exercicios/midia/fotos/1.jpg">
+            <p>Eu ciclista</p>
+        </div>
+        <div class="item">
+            <img src="../exercicios/midia/fotos/4.jpg">
+            <p>Eu e meus amores</p>
+        </div>
+        <div class="item">
+            <img src="../exercicios/midia/fotos/5.jpg">
+            <p>Eu e meu amorzinho</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

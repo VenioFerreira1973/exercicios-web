@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5" data-blabla="opa">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        /*const lista = document.querySelector('#compras') - esta seria uma outra maneira de fazer a mesma coisa que a linha abaixo*/
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('Elemento "ul" ...............................')
+        console.log('childNodes: ', lista.childNodes)
+        console.log('destino: ', lista.id)
+        console.log('destino: ', lista.destino)/*não vai funcionar pois destino é uma propriedade personalizada*/
+        console.log('getAttribute: ', lista.getAttribute('destino'))/*desta forma irá obter o resultado esperado*/
+        console.log('hasAttribute: ', lista.hasAttribute('destino'))/*retorna true se a lista contem o atributo destino*/
+        lista.setAttribute('destino', 'empresa')/*setanto um valor de atributo em um atributo existente*/
+        lista.setAttribute('status', 'aberto')/*setando um novo atributo*/
+        lista.removeAttribute('destino')/*remove o atributo destino da ul*/
+        console.log(lista.dataset)/* imprime o conteudo dos atributos com o prefixo "data-"*/
+        console.log(lista.dataset.urgencia)/*imprime no console exatamente o valor atribuido ao atributo*/
+        console.log(lista.getAttribute('data-urgencia'))/*tem o mesmo efeito da linha acima*/
+        lista.dataset.urgencia = 4/*altera o valor do atributo urgencia */
+
+
+        //cuidado
+        const label = document.querySelector('label')
+        console.log(label.for)//não funciona pois o for é uma palavra reservada da linguagem na verdade o identificador com este nome está incorreto
+        console.log(label.htmlFor)//esta seria uma das formas corretas
+        console.log(label.getAttribute('for'))//esta outra
+        console.log(label.getAttribute('htmlFor'))//desta forma não funciona retorna null
+    </script>
+</body>
+
+</html>

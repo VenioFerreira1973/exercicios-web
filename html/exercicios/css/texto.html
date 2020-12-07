@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* ... */
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: greenyellow;
+            color: seagreen;
+        }
+        p {
+            /*Valores padrão - não mudam nada na fonte */
+            font-size: 1em;/*1 vez o tamanho padrão, ou seja, não muda nada*/
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /*Unidades absolutas */
+            font-size: 100px;/*o tamanho do pixel é relativo - depende da resolução da tela*/
+            font-size:  72pt;/*pontos*/
+            font-size: 1in;/*polegadas*/
+
+            /*unidades relativas*/
+            font-size: 2.2em;/*multiplica a fonte relativa mais próxima por 2.2 e aplica no caso a referencia é a div que está com o valor padrão*/
+            font-size: 2.2rem;/*é equivalente a anterio*/
+            font-size: 50vh;/*altura do viewport*/
+            font-size: 10vw;/*largura do viewport*/
+
+            font-family: monospace;/*todas as letras ocupam o mesmo espaço*/
+            font-family: Georgia, 'Times New Roman', Times, serif;/*aplica a primeira ou uma das outras opções*/
+            font-family: Verdano, sans-serif;
+            font-family: 'Indie Flower', cursive;
+
+            font-weight: 900;/*esta propriedade aplica negrito na fonte dependendo do número aumenta a intensidade*/
+            font-style: italic;/*aplica estilo a fonte*/
+            text-transform: capitalize;/*tranforma a fonte aplicando uma propriedade*/
+            /*text-decoration: overline underline line-through;/*aplica linhas no texto*/
+
+            word-spacing: 10px;/*aplica espaço entre palavras de acordo com o valor determinado*/
+            letter-spacing: 20px;/*aplica espaço entre letras de acordo com o valor determinado*/
+            /*line-height: 2.5em;/*aplica espaço entre as linhas*/
+            text-align: center;/*alinhamento do texto na tela - left é o padrão caso não seja informado*/
+
+        }
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+        }
+        
+        .destaque{
+            color: olive;
+            background: lightgreen;
+            box-shadow: 10px 10px 5px 5px green;
+            font-family: 'Indie Flower', cursive;
+        }
+        .destaque:active{
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>

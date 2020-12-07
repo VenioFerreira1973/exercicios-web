@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Animação #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        body {
+            /* position: relative; */
+            background-color: #999;
+            color: #000;
+        }
+
+        div {
+            /* position: absolute; */
+            display: inline;
+            border: solid 5px #000;
+            /* padding: 300px;  */
+            /* font-size: 3em; */
+            padding-top: 50px;
+            padding-right: 470px;
+            padding-bottom: 610px;
+            padding-left: 80px;
+            
+        }
+        #valete{
+            background: url("./imgs/valete.png");
+        }
+        #dama{
+            background: url("./imgs/dama.png");
+        }
+        #rei{
+            background: url("./imgs/rei.png");
+        }
+    </style>
+</head>
+
+<body>
+    <div id="valete"></div>
+    <div id="dama"></div>
+    <div id="rei"></div>
+
+    <script>
+         function alterarLargura(valor, duracao, id, callback) {
+            $(id).animate({ width: `+=${valor}` }, duracao
+                , callback)
+        }
+
+        function alterarAltura(valor, duracao, id, callback) {
+            $(id).animate({ height: `+=${valor}` }, duracao
+                , callback)
+        }
+
+        function moverDiagonalBotton(valor, duracao, id, callback) {
+            $(id).animate({ top: `+=${valor}`, left: `+=${valor}` }
+                , duracao, callback)
+        }
+
+        function moverDiagonalTop(valor, duracao, id, callback) {
+            $(id).animate({ top: `-=${valor}`, left: `-=${valor}` }
+                , duracao, callback)
+        } 
+
+        function girarHorario(valor, duracao, id, callback) {
+            $(id).animate({ transform: `+=${valor}` }, {
+                step: function (valor) {
+                    $(this).css('transform', `rotate(${valor}deg)`)//negativo gira no sentido antihorário positivo no sentido horário
+                },
+                duration: duracao
+            }, 'linear', callback)
+        }
+
+        function girarAntiHorario(valor, duracao, id, callback) {
+            $(id).animate({ transform: `+=${valor}` }, {
+                step: function (valor) {
+                    $(this).css('transform', `rotate(-${valor}deg)`)//negativo gira no sentido antihorário positivo no sentido horário
+                },
+                duration: duracao
+            }, 'linear', callback)
+        }
+
+      //   alterarLargura(300, 100, '#valete', () => {
+      //      alterarLargura(-300, 'slow', '#valete', () => {
+                alterarAltura(100, 100, '#valete', () => {
+       //             moverDiagonalBotton(300, 600, '#valete', () => {
+         //                   moverDiagonalTop(300, 100, '#valete', () => {
+                        girarHorario(1800, 5000, '#valete')
+                         })
+
+      //              })
+       //         })
+     //       })
+
+     //   })
+
+       // alterarLargura(300, 100, '#dama', () => {
+        //    alterarLargura(-300, 'slow', '#dama', () => {
+                alterarAltura(100, 100, '#dama', () => {
+       //             moverDiagonalBotton(300, 600, '#dama', () => {
+                        girarAntiHorario(1800, 5000, '#dama')
+                    })
+
+    //            })
+     //       })
+
+     //   })
+
+     //   alterarLargura(300, 100, '#rei', () => {
+     //       alterarLargura(-300, 'slow', '#rei', () => {
+                alterarAltura(100, 100, '#rei', () => {
+      //              moverDiagonalBotton(600, 600, '#rei', () => {
+                        girarHorario(1800, 5000, '#rei')
+                    })
+
+     //           })
+       //     })
+
+     //   })
+    </script>
+</body>

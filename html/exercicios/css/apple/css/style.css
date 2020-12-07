@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;    
+}
+
+li{
+    list-style: none;
+}
+
+@font-face{
+    font-family:"SF Pro Text Regular";
+    src: url("./fonts/SF\ Pro\ Text\ Regular.ttf") format("true")
+}
+
+
+@font-face{
+    font-family:"SF Pro Text Regular";
+    src: url("./fonts/SF\ Pro\ Text\ Bold.ttf")
+}
+
+body{
+    font-family: "SF Pro Text Regular", sans-serif;
+    color: #1d1d1d;
+}
+
+h1{
+    font-family: "SF Pro Text Bold", sans-serif;
+    font-size: 56px;
+    letter-spacing: -0.005em;
+}
+
+h2{
+    font-family: "SF Pro Text Regular", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+.header{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+} 
+
+.header-container li{
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.headsup{
+    text-align: center;
+    font-size: 14px ;
+}
+
+.headsup p{
+    line-height: 1.47859;
+    padding: 12px 0;
+}
+.headsup a{
+    color: #06c;
+    text-decoration: none;
+
+}
+.headsup a:hover{
+    text-decoration: underline;
+}
+
+.iphone-se{
+    width: 100%;
+    height: 400px;
+    background: url("./img/applese.jpg");
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.iphone-se .titulo, 
+.iphone-11 .titulo{
+    margin-bottom: 6px;
+    margin-right: 0px;
+}
+
+.iphone-se .subtitulo,
+.iphone-11 .subtitulo{
+    margin-bottom: 12px;
+    margin-right: 0px;
+}
+
+
+.iphone-se a,
+.iphone-11 a{
+    color: #2997ff;
+    text-decoration: none;
+    font-size: 21px;
+}
+
+.iphone-se a:hover,
+.iphone-11 a:hover{
+    text-decoration: underline;
+}
+
+.iphone-11{
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    background: url("./img/apple11.jpg");
+    background-repeat: no-repeat;
+    text-align: center;
+
+    
+}
+
+

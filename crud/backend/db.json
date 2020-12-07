@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Caneta BIC Preta",
+      "price": 5.89
+    },
+    {
+      "id": 2,
+      "name": "Notebook Mac Pro",
+      "price": "9000.89"
+    },
+    {
+      "id": 3,
+      "name": "Samsumg Ultra Boss Mega Power",
+      "price": "4220.2"
+    },
+    {
+      "id": 4,
+      "name": "Lapis Faber Castel",
+      "price": 5.89
+    },
+    {
+      "id": 5,
+      "name": "Mouse Mac Pro",
+      "price": 1200.89
+    },
+    {
+      "id": 6,
+      "name": "TV Samsumg 4K",
+      "price": 9020.2
+    },
+    {
+      "id": 7,
+      "name": "Caneta BIC Preta",
+      "price": 5.89
+    },
+    {
+      "id": 8,
+      "name": "Notebook Mac Pro",
+      "price": "10000.89"
+    },
+    {
+      "id": 9,
+      "name": "Samsumg Master Blaster",
+      "price": 2220.2
+    }
+  ]
+}

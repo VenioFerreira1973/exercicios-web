@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <style>
+        div {
+            font-size: 40px;
+            margin: 20px;
+            padding: 20px;
+            background-color: coral;
+            border: solid 5px;
+            display: none;
+        }
+        /*abaixo o conteudo da classe muito-pequeno será mostrado enquanto a largura da tela for menor ou igual 600px*/
+        @media(max-width: 500px){
+            .muito-pequeno{display: block;}
+        }
+        /*abaixo o conteudo da classe pequeno-retrato será mostrado enquanto a largura da tela for menor ou igual 1000px ou se a orientação for retrato pode tbm ser configurado como paisagem*/
+        @media(max-width: 800px), (orientation: portrait){
+            .pequeno-retrato {display: block;}
+        }
+        /*abaixo o conteudo da classe intervalo será mostrado enquanto a largura da tela estiver entre 500 e 800px */
+        @media(min-width: 500px) and (max-width: 800px){
+            .intervalo {display: block;}
+        }
+    </style>
+</head>
+<body>
+    <div class="muito-pequeno">Muito Pequeno</div>
+    <div class="pequeno-retrato">Pequeno ou Retrato</div>
+    <div class="intervalo">Intervalo</div>
+</body>
+</html>

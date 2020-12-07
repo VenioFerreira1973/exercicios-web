@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            width: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: stretch;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: 
+                [inicio] 1fr
+                [metade-1 meio-1] 1fr
+                [metade-2 meio-2] 1fr [fim];
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        .d1{
+            grid-column-start: metade2;
+            grid-column-end: fim;
+            grid-column: meio-1 / fim;
+            /* grid-row: 1 / span 4; */
+            /*row-start column-start row-end column-end*/
+            grid-area: 1 / meio-1 / span 4 / fim;
+
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            grid-gap: 50px 20px;/*50px nas linhas e 20px nas colunas*/
+            grid-gap: 20px;/*20px nas colunas e linhas*/
+            max-width: 60%;
+        }
+
+        .d2{
+            /*row-start column-start row-end column-end*/
+            grid-area: 1 / inicio / span 2 / meio-1;
+            max-width: 120%;
+        }
+
+        .d3{
+            /*row-start column-start row-end column-end*/
+            grid-area: 3 / inicio / span 2 / meio-1;
+            max-width: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        <img src="./fotos/1.jpg">
+    </div>
+    <div class="d2">
+        <img src="./fotos/2.jpg">
+    </div>
+    <div class="d3">
+        <img src="./fotos/3.jpg">
+    </div>
+</body>
+
+</html>

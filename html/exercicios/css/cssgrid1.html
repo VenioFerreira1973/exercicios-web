@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        body{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-columns: repeat(4, 8.33%); /*são 12 divs no total, dividindo 100 por 12 obtem-se 8.33% neste caso a função repeat coloca 4 em cada linha*/
+            grid-template-columns: repeat(3, 8.33%);/*são 12 divs no total, dividindo 100 por 12 obtem-se 8.33% neste caso a função repeat coloca 3 em cada linha*/
+            grid-template-columns: repeat(2, 10%);/*são 12 divs no total, aplicando 10% a função repeat coloca 2 em cada linha e aumenta a largura para 10%*/
+            grid-template-columns: repeat(11, 100px) 100px;
+            grid-template-columns: 200px 20% 1fr;
+            grid-template-columns: 3fr 6fr 3fr;
+            grid-template-rows: 50% 25% 12.5% 12.5%;
+            grid-template-rows: 100px 1fr;/*primeira linha 100px a segunda o maior fragmento possível e as restantes com o restante dividido igualmente*/
+            grid-template-rows: 100px auto auto auto;/*primeira linha 100px e as restantes com o restante dividido igualmente*/
+        }
+
+        .d8{
+            grid-column-start: 2;
+            grid-column-end: 4;/*a div 8 irá ocupar as colunas 2 a 4*/
+            grid-column-end: span 2;/*tem o mesmo efeito das duas linhas acima*/
+
+            grid-row-start: 3;
+            grid-row-end: 5;/*a div 8 irá ocupar as colunas 3 a 5*/
+            grid-row-end: span 2;/*mesmo efeito das linhas acima*/
+        }
+
+        .d10,
+        .d11{
+            /* Cuidado com sobreposições */
+            grid-column-start: 1;
+            grid-column-end: 3;/*neste caso a div11 sobrepoe a div 10, é como se a div10 não existisse*/
+            grid-row-start: 5;
+            grid-row-end: span 1;/*esta linha tem o mesmo efeito da linha de cima*/
+
+        }
+
+        .d10{
+            z-index: 10;/*aplicando o z-index 10 a div10 sobrepõe a 11*/
+            z-index: -1;/*o z-index -1 a div11 volta a sobrepor a 10*/           
+
+        }
+
+    </style>
+</head>
+
+<body>
+   
+    <div class="d1">
+        <img src="./fotos/1.jpg">
+    </div>
+    <div class="d2">
+        <img src="./fotos/2.jpg">
+    </div>
+    <div class="d3">
+        <img src="./fotos/3.jpg">
+    </div>
+    <div class="d4">
+        <img src="./fotos/4.jpg">
+    </div>
+    <div class="d5">
+        <img src="./fotos/5.jpg">
+    </div>
+    <div class="d6">
+        <img src="./fotos/1.jpg">
+    </div>
+    <div class="d7">
+        <img src="./fotos/2.jpg">
+    </div>
+    <div class="d8">
+        <img src="./fotos/3.jpg">
+    </div>
+    <div class="d9">
+        <img src="./fotos/4.jpg">
+    </div>
+    <div class="d10">
+        <img src="./fotos/5.jpg">
+    </div>
+    <div class="d11">
+        <img src="./fotos/1.jpg">
+    </div>
+    <div class="d12">
+        <img src="./fotos/2.jpg">
+    </div>
+
+
+
+</body>
+
+</html>

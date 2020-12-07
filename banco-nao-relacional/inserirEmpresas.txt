@@ -1,0 +1,19 @@
+--inserir a empresa Bradesco e relacionar ao estado pelo ObjectId
+db.empresas.insert({nome: "Bradesco", estadoId: ObjectId("5fcb9035f15799958455168c")})
+
+--inserir a empresa Vale e relacionar a cidade pelo ObjectId
+db.empresas.insert({nome: "Vale", cidadeId: ObjectId("5fcb9035f15799958455168b")})
+
+
+--reinserir o estado do Rio de Janeiro
+db.estados.insert({
+nome: "Rio de Janeiro",
+sigla: "RJ",
+regiao: "Sudeste",
+cidades: [{
+_id: ObjectId(),
+nome: "Niteroi",
+area: 133.9,
+populacao: 487562
+}]
+})

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        console.log(document.forms)/*Exibe no console um array com todos os formularios da pagina html do tipo htmlcollection, neste caso temos apenas um */
+        console.log(document.getElementsByTagName('pesquisa'))/*Apresenta o mesmo efeito da linha anterior*/
+        console.log(document.forms[0])/*Exibe no console o elemento de indice zero do array htmlcollection formulário, neste caso apenas o elemento de pesquisa*/
+        console.log(document.getElementsByName('pesquisa'))/*Exibe no consoele o elemento de nome pesquisa com o tipo NodeList*/
+        console.log(document.pesquisa)/*retorna todos os elementos dentro do formulário pesquisa*/
+        console.log(document.pesquisa.q)/*retorna apenas o elemento de nome q do formulário pesquisa*/
+        document.pesquisa.q.value = 'Linux Brasil'/*esta linha aplica a string no campo do elemento de nome q*/
+        console.log(document.pesquisa.q.placeholder)/*retorna a string contida no atributo placeholder do elemento de nome q do formulário pesquisa*/
+        document.pesquisa.hl.value = 'pt-br'/*aplica o valor en-us no campo de seleção de novo hl*/
+        console.log(document.pesquisa.hl.selectedIndex)/*retorna o indice do elemento selecionado*/
+
+
+    </script>
+</body>
+
+</html>

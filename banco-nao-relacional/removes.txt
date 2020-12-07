@@ -1,0 +1,6 @@
+--removendo o estado cuja sigla é AC
+db.estados.remove({sigla: "AC"})
+
+
+--removendo estados que não tem o atributo populacao limitando somente ao primeiro estado
+db.estados.remove({populacao: {$exists: true}}, 1)

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        input {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Eventos #01</h1>
+    <div id='posicao'></div>
+    <div id='cliques'>Cliques: 0</div>
+    <input type="text" placeholder="Cor de Background">
+
+    <script>
+        function mostrarPosicaoMouse(e){
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+        $('body').on('mousemove', mostrarPosicaoMouse)//a função on faz com que o sistema comece a gerar as posições do mouse
+
+        $('#posicao').mouseover( e => {//mouseover - quando o mouse estiver sobre o elemento
+            $('body').off('mousemove', mostrarPosicaoMouse)//ao passar pela div com id posicao o sistema para de gerar as posições devido a funcão off
+        })
+
+        $('#posicao').mouseleave(e => {
+            $('body').on('mousemove', mostrarPosicaoMouse)
+            //$('body').mousemove(mostrarPosicaoMouse)// tem o mesmo efeito da linha acima
+        })
+        let cliques = 0
+        $('body').click( e =>{
+            $('#cliques').html(`Cliques: ${++cliques}`)
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+
+        $('input').keyup(function(e) {//keyup pega o valor atual digitado no teclado
+            const valor = $(this).val()
+            if (valor.match(/#[\da-fA-F]{3,6}/)){//match verifica se o que está no campo valor coincide com alguma parte da expressão regular
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
+         
+    </script>
+</body>

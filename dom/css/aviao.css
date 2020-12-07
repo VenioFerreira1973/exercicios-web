@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    font-family: Pixel;
+    font-size: 80px;
+    color: gold;
+
+}
+
+.titulo{
+    position: relative;
+    border: 2px solid dodgerblue;
+    height: 90px;
+    width: 1200px;
+    margin: 15px;
+    text-align: center;
+
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+[wm-aviao] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden;
+}
+
+.aviao {
+    position: absolute;
+    width: 90px;
+    left: calc(50% - 30px);
+    /* top: 590px; */
+    bottom: 0px;
+}
+
+.explosao {
+    position: absolute;
+    width: 100px;
+    left: calc(50% - 30px);
+    /* top: 590px; */
+    bottom: 0px;
+}
+
+
+p{
+    font-family: Pixel;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.par-de-barreiras {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.barreira .borda {
+    height: 130px;
+    width: 30px;
+    background-image: url('../imgs/tijolos.png');
+    /* background: linear-gradient(90deg, #639301, #A5E82E); */
+    border: 2px solid #000;
+}
+
+.barreira .corpo {  
+    height: 110px;
+    width: 150px;
+    /* background: linear-gradient(90deg, #639301, #A5E82E); */
+    background-image: url('../imgs/tijolos.png');
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.help {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    font-family: Pixel;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.helpWindow{
+    position: absolute;
+    top: 200px;
+    right: 300px; 
+    font-family: Pixel;
+    font-size: 30px;
+    z-index: 100;
+    border: 2px solid dodgerblue;
+    height: 150px;
+    width: 600px;
+    margin: 15px;
+    background-color: black;
+    text-align: center;
+}
+
+.startButton {
+    position: absolute;
+    bottom: 5px;
+    left: 100px;
+    font-family: Pixel;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.progresso {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-family: Pixel;
+    font-size: 70px;
+    z-index: 100;/*coloca o progresso na frente dos outros elementos na tela*/
+}
+
+

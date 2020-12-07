@@ -1,0 +1,7 @@
+--Retorna a populacao da cidade de Sorocaba
+db.estados.aggregate([
+    { $match: {"cidades.nome": "Sorocaba"}},
+    { $unwind: "$cidades"},
+    { $match: {"cidades.nome": "Sorocaba"}},
+    { $project: {_id: 0, populacao: "$cidades.populacao"}}    
+]).pretty()

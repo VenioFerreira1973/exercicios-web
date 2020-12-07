@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        const classes = div.classList
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque')//toggle se existir o atributo na lista de classes ele remove se não existir ele inclui
+        console.log(classes.contains('destaque'))//imprimi true pois o toggle acabou de incluir
+        console.log(classes.length)//retorna o tamanho 1 pois existe um atributo
+        classes.toggle('destaque')//remove o atributo destaque
+        console.log(classes.length)//retorna 0 pois não há atributos na lista de classes
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        for (let c of classes){
+            console.log(c)//imprime no console os atributos que acabamos de adicionar na lista de classes
+        }
+
+        classes.forEach(c => console.log(c))
+    </script>
+</body>
+
+</html>

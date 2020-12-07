@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora{
+            position: relative;
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+        }
+        .dentro{
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: relative;/* ocupara o conteúdo */
+            position: static; /* ocupara o conteúdo - static é a position padrão quando não informada*/
+            position: absolute;/*neste caso a div de dentro irá extrapolar a div de fora, pois considera o conteúdo + padding da div de fora*/
+            position: fixed; /*neste tipo de position a div filha não vai mais se comportar de acordo com a div pai ela vai ocupar todo o viewport (tela)*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>

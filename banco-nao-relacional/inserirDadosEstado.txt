@@ -1,0 +1,71 @@
+MongoDB Enterprise > db.estados.insert({nome: "Acre", sigla: "AC", regiao: "Norte"})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise > show collections
+estados
+MongoDB Enterprise > show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+wm      0.000GB
+MongoDB Enterprise > db.estados.save({nome: "Alagoas", sigla: "AL", regiao: "Nordeste", populacao: 3322000})
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise > db.estados.find()
+{ "_id" : ObjectId("5fcb898df157999584551686"), "nome" : "Acre", "sigla" : "AC", "regiao" : "Norte" }
+{ "_id" : ObjectId("5fcb89dbf157999584551687"), "nome" : "Alagoas", "sigla" : "AL", "regiao" : "Nordeste", "populacao" : 3322000 }
+MongoDB Enterprise > db.estados.find().pretty()
+{
+        "_id" : ObjectId("5fcb898df157999584551686"),
+        "nome" : "Acre",
+        "sigla" : "AC",
+        "regiao" : "Norte"
+}
+{
+        "_id" : ObjectId("5fcb89dbf157999584551687"),
+        "nome" : "Alagoas",
+        "sigla" : "AL",
+        "regiao" : "Nordeste",
+        "populacao" : 3322000
+}
+MongoDB Enterprise > db.estados.insert({
+... nome: "Rio de Janeiro",
+... sigla: "RJ",
+... regiao: "Sudeste",
+... cidades: [{
+... nome: "Niteroi",
+... area: 133.9,
+... populacao: 487562
+... }]
+... })
+WriteResult({ "nInserted" : 1 })
+MongoDB Enterprise > show db.estados
+2020-12-05T10:28:51.460-0300 E QUERY    [js] Error: don't know how to show [db.estados] :
+shellHelper.show@src/mongo/shell/utils.js:1066:11
+shellHelper@src/mongo/shell/utils.js:766:15
+@(shellhelp2):1:1
+MongoDB Enterprise > db.estados.find().pretty()
+{
+        "_id" : ObjectId("5fcb898df157999584551686"),
+        "nome" : "Acre",
+        "sigla" : "AC",
+        "regiao" : "Norte"
+}
+{
+        "_id" : ObjectId("5fcb89dbf157999584551687"),
+        "nome" : "Alagoas",
+        "sigla" : "AL",
+        "regiao" : "Nordeste",
+        "populacao" : 3322000
+}
+{
+        "_id" : ObjectId("5fcb8b07f157999584551688"),
+        "nome" : "Rio de Janeiro",
+        "sigla" : "RJ",
+        "regiao" : "Sudeste",
+        "cidades" : [
+                {
+                        "nome" : "Niteroi",
+                        "area" : 133.9,
+                        "populacao" : 487562
+                }
+        ]
+}

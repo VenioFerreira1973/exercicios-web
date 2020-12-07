@@ -1,0 +1,29 @@
+--A consulta abaixo retorna todos os estados e as cidades dos estados que tem cidades na base de dados
+db.estados.aggregate([
+    { $project: {nome: 1, "cidades.nome": 1, _id: 0}}
+])
+
+--A consulta abaixo retorna as siglas dos estados e a soma dos valores cadastrados no atributo população de cada estado
+db.estados.aggregate([
+    {$project: {populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0}}
+])
+
+--Retorna a soma do atributo populacao das cidades e a populacao dos estados
+db.estados.aggregate([
+    {$project:  { populacaoCidade: {$sum: "$cidades.populacao"}, populacaoEstado: {$sum: "$populacao"} , sigla: 1, _id: 0}}
+])
+
+--Retorna a soma das populações encontradas no primeiro passo do pipeline de agregação utilizando o group
+db.estados.aggregate([
+    { $project: { populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao"}}}
+    
+])
+
+--Retorna o mesmo resultado da consulta anterior mas sem o ID
+db.estados.aggregate([
+    { $project: { populacao: {$sum: "$cidades.populacao"}, sigla: 1, _id: 0} },
+    { $group: {_id: null, populacaoTotal: {$sum: "$populacao"}}},
+    { $project: {_id: 0, populacaoTotal: 1 }}
+    
+])

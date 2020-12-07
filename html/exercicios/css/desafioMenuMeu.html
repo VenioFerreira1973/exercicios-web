@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            /* font-family: 'Oswald', sans-serif;
+            font-size: 25px;
+            color: white;  */
+
+            /*Leo*/
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background-color: lightgrey;/*ok*/
+
+            /*Leo*/
+            margin: 0px;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            /* position: fixed;
+            right: 0px;
+            top: 0px;
+            left: 0px;
+            height: 120px;/*ok*/
+            /* background-color: black;/*ok*/
+
+            /*Leo*/
+            background-color: rgb(9, 9, 40);
+            border-bottom: solid 5px #4faddb;
+            height: 100px;
+            box-sizing: content-box;
+        }
+
+        .logo {
+            /* position: relative;
+            top: 0px;
+            width: 20px;
+            height: 10px;   */
+
+            /*Leo*/
+            display: contents;
+            height: 110px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .menu-toggle {
+            /* position: relative;
+            right: 0px;
+            top: 30px;
+            display: none; */
+
+            /*Leo*/
+            float: right;
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            height: 70px;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 40px;
+        }
+
+        .menu {
+            /* position: relative;
+            top: 0px;
+            width: 500px;
+            left: 500px;
+            padding: 10px 10px 10px 10px; */
+
+            /*Leo*/
+            display: inline-block;
+            vertical-align: top;
+            height: 80px;
+            padding: 30px;
+        }
+
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .menu a {
+            padding: 15px;
+        }
+
+        /*  .menu>ul>li>a:hover{
+            background-color: royalblue;
+            color: black;
+        } */
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+        }
+       
+
+        .autenticacao {
+            /* position: absolute;
+            right: 0px;
+            top: 30px;*/
+
+            /*Leo*/
+            float: right;
+            height: 80px;
+            padding: 25px;
+            font-size: 1.0em;
+        }
+
+        .menu a:hover,
+        .menu a.selected {
+            background-color: #4fabbd;
+            color: #000;
+        }
+
+
+        .botao {
+            /*text-decoration: none;*/
+            /*padding: 10px 30px;/*ok*/
+            /*border-radius: 25px;/*ok*/
+            /* color: white;*/
+
+            /*Leo*/
+            border-radius: 25px;
+            padding: 3px 6px;
+            margin: 5px;
+        }
+
+        .destaque {
+            /* background-color: red; */
+
+            /*Leo*/
+            background: green;
+            color: #fff;
+        }
+        
+        .destaqueLogin {
+            background: navy;
+            color: #fff;
+        }
+        
+
+
+        @media(min-width: 679px){
+            .menu-toggle{display: none;}
+        }
+
+        @media(max-width: 680px){
+            .menu{display: none;}
+        }
+
+        @media(max-width: 910px){
+            .autenticacao{display: none;}
+            
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio"><img src="logo/logo.png" alt="Logo" /></a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+                <li>
+                    <a href="#configuracoes">Configurações</a>
+                </li>
+            </ul>
+        </nav>
+
+        <aside class="autenticacao">
+            <a href="#login" class="botao destaqueLogin">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+
+    </header>
+
+    <script>
+        window.onhashchange = function (e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            console.log(oldURL, newURL)
+            const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldMenu && oldMenu.classList.remove('selected')
+            newMenu && newMenu.classList.add('selected')
+        }
+    </script>
+</body>
+
+</html>

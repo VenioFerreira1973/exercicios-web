@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Selecionando Elementos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+    <style>
+        .negrito {
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Selecionando Elementos #01</h1>
+    <div>
+        <p>Parágrafo
+            <span class='negrito'>dentro span</span>
+        </p>
+    </div>
+    <div>
+        <ul id='feira'>
+            <li>Arroz</li>
+            <li wm-obrigatorio>Feijão</li>
+            <li class='opcional'>Carne</li>
+            <li class='opcional'>Ovo</li>
+        </ul>
+    </div>
+    <form>
+        <input type='text' name='texto'>
+        <input type='password' name='senha'>
+        <input type='checkbox' name='check1'>
+        <input type='radio' name='radio1'>
+        <input type='file' name='arquivo'>
+    </form>
+
+    <script>
+        $('#feira').addClass('destaque').removeClass('destaque')//adiciona e remove a classe destaque no elemento de id feira, o estilo é aplicado conforme arquivo estilo.css
+        $('li').addClass('destaque')//adiciona a classe destaque no elemento com seletor li, cada elemento será destacado
+        $('[wm-obrigatorio]').removeClass('destaque')//remove a classe destaque somente do elemento com seletor wm-obrigatorio
+        $('li.opcional').removeClass('destaque')//remove a classe destaque somente do elemento com seletor li da classe opcional
+        $('div p span').addClass('destaque')//adiciona a classe destaque ao elemento contido na div que tenha os seletores p e span
+
+
+        //Exclusivo jQuery
+        $('li:first').css('border', 'solid 3px yellow')//aplica ao primeiro elemento com seletor li um estilo css
+        $('li:odd').css('border', 'solid 10px orange')//aplica aos elementos impares com seletor li um estilo css
+        $('li:gt(1)').css('border', 'solid 10px white')//aplica aos elementos com indices na lista li maiores do que (gt) 1
+        $('li:not(:last)').css('border', 'none')//retirar a borda dos elementos menos do ultimo
+        $('li:contains("r")').css('background-color', 'black')//aplica fundo preto nos elementos que contem a letra 'r'
+
+
+        $('form *').hide() //esconde todos os elementos do seletor form
+        $('form :text').show()//mostra os elementos do seletor form com o tipo text
+        $('form :password').show()//mostra os elementos do seletor form com o tipo password
+        $('form :checkbox').show()//mostra os elementos do seletor form com o tipo checkbox
+        $('form :radio').show()//mostra os elementos do seletor form com o tipo radio
+        $('form :file').show()//mostra os elementos do seletor form com o tipo file
+
+    </script>
+</body>

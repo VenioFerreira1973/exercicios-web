@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+    <p>Teste</p>
+
+    <script>
+        $('div').hide(3000).show(1000)//hide esconde os elementos, show mostra os elementos o parametro é o tempo em segundos
+        $('h1').hide(3000).show(1000)//hide esconde os elementos, show mostra os elementos o parametro é o tempo em segundos
+        $('p').fadeOut(3000).fadeIn(3000)//esconde os elementos e mostra novamente em 3 segundos - exemplo de chainning
+
+        console.log($('div').get(0))//retorna o nó da DOM contendo suas propriedades 
+
+        console.log($.isEmptyObject({}))//função utilitaria retorna true pois o objeto está vazio
+        console.log($.isEmptyObject({nome: null}))//função utilitaria retorna true pois o objeto está vazio
+        console.log(jQuery.inArray(3, [1,2,3]))//retorna a posição do numero 3 no array
+
+        //utilizando funções para manipular CSS no jQuery
+        $.fn.fundoVerde = function (){
+            this.css('background-color', 'green')
+            return this //é necessário retornar o this para garantir a utilização de funções utilitárias encadeadas
+        }
+
+        $('body').fundoVerde().hide(1000)//a função muda a cor do background
+    </script>
+</body>

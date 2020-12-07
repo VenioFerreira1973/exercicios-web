@@ -1,0 +1,29 @@
+--altera a populacao do estado de sigla SP
+db.estados.update({sigla: "SP"}, {$set: {populacao: 45340000}})
+
+--insere a cidade de Sergipe no estado de sigla AL
+db.estados.update({sigla: "AL"}, {$set: {cidades: [{nome: "Sergipe"}]}})
+
+--insere a cidade de Santos no estado de sigla SP - usa-se $push pois usando o $set o mongo iria aplicar um update em todas as cidades do estado
+db.estados.update({sigla: "SP"},{$push: {cidades: {nome: "Santos", populacao: 433966}}})
+
+--inserindo o estado de Minas Gerais e a cidade de Araguari
+db.estados.insert({
+nome: "Minas Gerais",
+sigla: "MG",
+regiao: "Sudeste",
+cidades: [{
+nome: "Araguari",
+area: 600.9,
+populacao: 130062
+}]
+})
+
+--selecionando os estados que possuem o atributo populacao
+db.estados.find({populacao: {$exists: true}},{_id: 0, nome: 1})
+
+--inclusão do atributo população no estado cuja sigla é RJ 
+db.estados.update({sigla: "RJ"}, {$set: {populacao: 16720000}})
+
+--remover estados cuja populacao é menor do que 20 milhoes de habitantes
+db.estados.remove({populacao: {$lt: 20000000}})

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binding</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a href="{{ link }}">Canal?</a></p><!-- desta forma da ruim -->
+        <p><a v-bind:href="link">Canal</a></p><!-- desta forma da bom -->
+        <p><a :href="link">Canal</a></p><!-- desta também -->
+        <p>
+            <input type="text" v-model="nome"><br><!-- exemplo de bind bidirecional -->
+            <span>{{nome}}</span>
+                <br>
+            <!-- <input type="text" v-bind:value="nome"><br>desta forma o efeito é diferente
+            <span>{{nome}}</span> -->
+        </p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                nome: "Maria",
+                link: "https://youtube.com.br/cod3rcursos"
+            },
+            watch: {
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        }
+
+    )
+    </script>
+</body>
+</html>

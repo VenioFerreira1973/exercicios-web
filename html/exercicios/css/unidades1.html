@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        /*Alterações no zoom ou tamanho da tela não tem efeito sobre os elementos, eles mantem o tamanho absoluto determinado*/
+        .unidades-absolutas{
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm;/*unidade pouco utilizada*/
+            height: 20mm;/*unidade pouco utilizada*/
+            top: 150px;/*esta propriedade só terá efeito se o position for absolute*/
+            left: 200px;/*esta propriedade só terá efeito se o position for absolute*/
+        }
+        /*As alterações no zoom da tela ou diminuição da tela serão afetadas quando se usa unidades relativas*/
+        /*Os elementos são redimensionados para manter os valores relativos determinados*/
+        .unidades-relativas{
+            position: absolute;
+            font-size: 4em;/*este tipo de unidade se aplica sobre o tamanho de fonte padrão do browser, neste caso será aplicada uma fonte 4 vezes maior que o tamanho padrão do browser*/
+            padding: 5%;
+            border: solid 1vw #222;/*1vw significa 1/100 do tamanho da tela alterando o tamanho da tela o tamanho da borda será redimensionado*/
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

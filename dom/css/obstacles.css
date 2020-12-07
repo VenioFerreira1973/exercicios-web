@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    font-family: Pixel;
+    color: gold;
+
+}
+
+body {
+    margin: 0;
+    background-color: #0D262D;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+.title{
+    position: relative;
+    border: 2px solid dodgerblue;
+    font-size: 90px; 
+    height: 100px;
+    width: 1200px;
+    margin: 15px;
+    text-align: center;
+    /* align-content: center; */
+
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+[obstacles] {
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden;
+}
+
+.airplane {
+    position: absolute;
+    width: 90px;
+    left: calc(50% - 30px);
+    bottom: 0px;
+}
+
+.explosion {
+    position: absolute;
+    width: 100px;
+    left: calc(50% - 30px);
+    bottom: 0px;
+}
+
+
+p{
+    font-family: Pixel;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.pair-of-barriers {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.barrier {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.barrier .edge {
+    height: 130px;
+    width: 30px;
+    background-image: url('../imgs/bricks.png');
+    border: 2px solid #000;
+}
+
+.barrier .body {  
+    height: 110px;
+    width: 150px;
+    background-image: url('../imgs/bricks.png');
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.help {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    font-family: Pixel;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.helpWindow{
+    position: absolute;
+    top: 200px;
+    right: 150px; 
+    font-family: Pixel;
+    font-size: 40px;
+    z-index: 100;
+    border: 2px solid dodgerblue;
+    height: 130px;
+    width: 900px;
+    margin: 15px;
+    background-color: #000;
+    text-align: center;
+}
+
+.startButton {
+    position: absolute;
+    bottom: 5px;
+    left: 100px;
+    font-family: Pixel;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.progress {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    font-family: Pixel;
+    font-size: 70px;
+    z-index: 100;
+}
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Float</title>
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        .c1 {
+            background-color: red;
+            float: right;
+        }
+
+        .c2 {
+            background-color: green;
+            float: left;
+            clear: right;
+        }
+        
+        .c3 {
+            background-color: blue;
+            float: right;
+            clear: left;
+        }
+
+        .c4 {
+            background-color: orange;
+            float: left;
+            clear: right;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">1 - Flutuei pra direita</div>
+    <div class="c2">2 - Flutuei pra esquerda fiz clear a direita e não ocupei o lugar do 1</div>
+    <div class="c3">3 - Flutuei pra direita fiz clear a esquerda e não ocupei o lugar do 2</div>
+    <div class="c4">4 - Flutuei pra esquerda fiz clear a direita e não ocupei o lugar do 3</div>
+</body>
+
+</html>

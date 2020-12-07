@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+            <li>Vênio</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('#compras')
+
+        //somente leitura
+        console.log(lista.attributes)
+        console.log(lista.attributes[0])//compras
+        console.log(lista.attributes[1])//escritório
+        console.log(lista.attributes[2])//5
+        console.log(lista.attributes[3])//undefined
+        console.log(lista.attributes.destino)//destino="escritório"
+        console.log(lista.attributes['data-urgencia'])//data-urgencia="5"
+
+        lista.attributes.destino = 'casa'//este comando terá efeito mas somente em tempo de execução não alterar o html efetivamente
+        console.log(lista.attributes.destino)//ao imprimir o valor do atributo neste momento ele mostra o valor alterado mas não teve alteração efetiva da DOM, pois 
+
+    </script>
+</body>
+
+</html>

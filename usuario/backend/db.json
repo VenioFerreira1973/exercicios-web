@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "ADRIELLY CORREIA",
+      "login": "A126600",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 2,
+      "name": "ADRYELLE PINHEIRO",
+      "login": "A126601",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 3,
+      "name": "ALESSANDRA TAKADA",
+      "login": "A126602",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 4,
+      "name": "ALESSANDRO WALTER DE SOUSA",
+      "login": "A126603",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 5,
+      "name": "ALINE FRANQUILINA",
+      "login": "A126604",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 6,
+      "name": "ALINE MARQUES DA SILVA",
+      "login": "A126605",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 7,
+      "name": "ALISSON CARDOSO",
+      "login": "A126606",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 8,
+      "name": "ALYSON LUKOSEVICI",
+      "login": "A126607",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "id": 9,
+      "name": "AMANDA DE CASTRO SILVA",
+      "login": "A126608",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "01/07/2020 17:19:24",
+      "status": "Ativo",
+      "senha": "12345"
+    },
+    {
+      "name": "VENIO FERREIRA",
+      "login": "A126609",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "23/10/2020 16:29:26",
+      "status": "Ativo",
+      "senha": "12345",
+      "id": 10
+    },
+    {
+      "name": "VENIO FERREIRA",
+      "login": "A126610",
+      "perfil": "Atendimento BKO Acompanhamento",
+      "equipe": "Atendimento todas as filas",
+      "dataAlteracao": "23/10/2020 16:29:26",
+      "status": "Ativo",
+      "senha": "12345",
+      "id": 11
+    }
+  ]
+}

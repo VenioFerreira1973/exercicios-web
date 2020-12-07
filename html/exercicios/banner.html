@@ -1,0 +1,148 @@
+<div wm-slider>
+
+    <p>
+        <img src="../exercicios/midia/fotos/2.jpg" alt="Foto1" id="foto" title="Muro da Cidade de Tarso Bessa">
+
+    </p>
+    <p>
+        <img src="../exercicios/midia/fotos/3.jpg" alt="Foto1" id="foto" title="Muro da Cidade de Tarso Bessa">
+
+    </p>
+    <p>
+        <img src="../exercicios/midia/fotos/4.jpg" alt="Foto1" id="foto" title="Muro da Cidade de Tarso Bessa">
+
+    </p>
+    <p>
+        <img src="../exercicios/midia/fotos/5.jpg" alt="Foto1" id="foto" title="Muro da Cidade de Tarso Bessa">
+
+    </p>
+
+   <!--
+
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342"
+            title="Muro da Cidade de Tarso Bessa">
+
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+
+    </p>
+
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
+        The span element doesn't mean anything on its own, but can be useful
+        when used together with the global attributes, e.g. class, lang, or dir.
+        It represents its children.
+        O elemento span não significa nada por si só, mas pode ser útil
+        quando usado junto com os atributos globais, por exemplo classe,
+        lang ou dir. Representa seus filhos.
+
+    </p>
+
+    <p class="cidade"></p>
+
+    <p> -->
+        <!--O código abaixo serve para redimencionamento de imagens quando as mesmas não cabem na tela-->
+        <!--Exemplo: neste caso se o tamanho da tela exceder 600px o sistema renderiza a imagem menor-->
+        <!--
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+        </picture>
+    </p>-->
+
+</div>
+
+<style>
+    #foto {
+        width: 800px;
+        height: 600px;
+    }
+
+    p {
+        position: absolute;
+        display: none;
+
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #fff;
+    }
+
+    .texto {
+        width: 400px;
+    }
+
+    .texto img {
+        margin-right: 10px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+
+<script>
+
+    function mover(elem, inicio, fim, passo, callback) {
+        const novoInicio = inicio - passo
+        if (novoInicio >= fim) {
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+        } else {
+            callback()
+        }
+    }
+
+    /*
+    const p = document.querySelectorAll('[wm-slider] > p').forEach(figura => {
+        figura.style.display = 'block'
+        mover(figura, 1450, -520, 5, () => {
+            console.log("Terminou!")
+        })
+    })*/
+
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
+        const slides = Array.from(elementos)//converte os elementos em um array de elementos
+        exibirSlide(slides, slides[0])
+    }
+
+    function exibirSlide(slides, slide) {
+        slide.style.display = 'block'//mostra o slide
+
+        const inicio = innerWidth //largura da tela
+        const fim = -slide.clientWidth //largura do cliente
+
+        slide.style.left = `${inicio}px` //inicio do movimento
+
+
+        mover(slide, inicio, fim, 3, () => {
+            slide.style.display = 'none'
+            exibirSlide(slides, getProximo(slides, slide))
+        })
+
+
+    }
+
+    function getProximo(lista, atual) {
+        const i = lista.indexOf(atual) + 1
+        return i < lista.length ? lista[i] : lista[0]
+
+    }
+
+    slider()
+
+</script>

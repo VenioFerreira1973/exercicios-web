@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Card</title>
+    <style>
+        .curso{
+            display: inline-block;/*ok*/
+            box-sizing: border-box;
+            border: solid 1px black;/*ok*/
+            box-shadow: 1px 1px 5px 5px lightgray; /*ok*/
+            padding: 10px 10px;
+            margin: 20px 20px 20px 20px;
+            height: 310px;/*ok*/
+            width: 270px;/*ok*/
+
+            /*Leo*/
+            /* float: left;/*display: inline-block -- teria o mesmo efeito */
+            /*vertical-align: top; /*força o posicionamento dos box verticalmente no topo */
+            /* font-family: Verdana, sans-serif;
+            border: solid 1px #ccc;
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+            height: 300px;
+            width: 260px;
+            margin: 5px 20px;
+            padding: 5px;  */
+        }
+
+        .curso img{
+            height: 9em;
+
+            /* Leo 
+            width: 100%;
+            max-height: 50%; */
+        }
+
+        .curso-info{
+            box-sizing: border-box;
+            
+            /*Leo 
+            padding: 10px;
+            height: 90px;
+            overflow: hidden; */
+        }
+        .curso-info h4{
+            font-family: Arial;
+            font-size: 25px;/*ok*/
+            box-sizing: content-box;
+
+            /* Leo 
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0px; */
+
+        }
+        .curso-info p{
+            font-family: 'Times New Roman';
+            font-size: 15px;
+            box-sizing: content-box;
+            
+
+        }
+        .preco-de{
+            color: red;/*ok*/
+            text-decoration-line: line-through;/*ok*/
+            font-size: 20px;
+            font-family: Arial;
+
+            /*Leo
+            text-decoration: line-through;
+            color: firebrick; */
+            
+        }
+        .preco-por{
+            color: green;/*ok*/
+            font-weight: bold;/*ok*/
+            font-size: 30px;/*ok*/
+            font-family: Arial;
+
+           /*Leo
+            color: green;
+            font-weight: bold;
+            font-size: 1.4em; */
+            
+        }
+        .curso-preco{
+            text-align: right;
+
+            /*Leo
+            float: right;
+            padding: 10px; */
+        }
+
+        
+        
+      
+    </style>
+</head>
+
+<body>
+    <h1>Card</h1>
+
+    <h2>Objetivo</h2>
+    <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
+
+    <h2>Resultado</h2>
+    <div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
+            <div class="curso-info">
+                <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                <p>Prof. Fulano</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
+            <div class="curso-info">
+                <h4>Web Moderno com Javascript + Projetos</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

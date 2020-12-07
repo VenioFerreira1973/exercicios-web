@@ -1,0 +1,23 @@
+ <h1 id="inicio">Links</h1>
+
+<!--URL absoluta-->
+<a href="https://www.google.com.br">Google 1</a><br><!--abre o google na mesma tela do site-->
+<a href="https://www.google.com.br" target="_blank">Google 2</a><br><br><!--abre o google em uma nova tela-->
+
+<!--URLs relativas - em todos os casos a navegação será direcionada para a pasta index-->
+<a href="index.html">Voltar 1</a><br>
+<a href="/index.html">Voltar 2</a><br>
+<a href="../index.html">Voltar 3</a><br><br><br>
+
+<!--enviar email-->
+<a href="mailto:venioferreira@yahoo.com.br">Contato</a><br><br>
+
+<!--CSS inline -não é uma boa prática-->
+<div id="noticia" style="position:absolute;top:2000px;">
+    <h1>Noticia bomba</h1>
+    <p>Não era nada</p>
+    <!--Uso de ancoras para navegação dentro de uma mesma página usando os ids-->
+    <a href="#inicio">Voltar início</a>
+</div>
+
+<a href="#noticia">Ir para notícia</a>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor{
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* multiplos valores */
+            border: solid 2px rgb(133, 20, 20); /*shortland property*/
+            font-family: Helvetica, monospace; /*se a primeira fonte não existir no browser ele aplica a segunda*/
+            /*Aplicando funções*/
+            width: calc(100% - 50px);/*a função irá aplicar um tamanho 100% menos 30px*/
+            background-color: rgb(34,153,189);
+        }
+        /*Usando pseudo-classe*/
+        .seletor:hover{
+            background-color: orangered;
+        }
+        /*Usando pseudo-elemento */
+        .seletor::first-letter {
+            font-size: 60px;
+            font-weight: bold;
+        }
+        /*Padrão camelcase ou dashcase?*/
+        /*o que importa é que o padrão adotado seja persistente em todo o projeto */
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

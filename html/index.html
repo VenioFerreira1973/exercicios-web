@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        .body {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 0;
+            
+        }
+
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            background-color: darkred;        
+            justify-content: space-around;
+            font-family: sans-serif;
+        }
+
+        .cabecalho h1{
+            color: white;
+            padding: 10px 15px;
+            
+        }
+
+        .cabecalho a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 15px;
+        }
+
+        .menu {
+            display: flex;
+            flex-grow: 10;
+            
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border: solid 1px green;
+            color: green;
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #conteudo {
+            padding: 30px 0px;
+            border-bottom: solid 30px green;
+            border-top: solid 30px green;
+        }
+
+        
+    </style>
+</head>
+
+<body class="body">
+    <header class="cabecalho">
+        <h1 class="logo">
+            Exercícios <br> HTML
+        </h1>
+
+        <nav class="menu">
+            <a href wm-nav="exercicios/texto1.html">Texto 1</a>
+            <a href wm-nav="exercicios/texto2.html">Texto 2</a>
+            <a href wm-nav="exercicios/listas.html">Listas</a>
+            <a href wm-nav="exercicios/aninhadas.html">Aninhadas</a>
+            <a href wm-nav="exercicios/links.html">Links</a>
+            <a href wm-nav="exercicios/tabela.html">Tabela</a>
+            <a href wm-nav="exercicios/form/form.html">Formulario</a>
+            <a href wm-nav="exercicios/imagens.html">Imagens</a>
+            <a href wm-nav="exercicios/banner.html">Banner</a>
+            <a href wm-nav="exercicios/video.html">Video</a>
+            <a href wm-nav="exercicios/tagsNaoVisuais.html">Tags não visuais</a>
+            <a href wm-nav="exercicios/maquiavel.html">Maquiavel</a>
+        </nav>
+    </header>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {//obtem os links com a tag 'a'
+            const conteudo = document.getElementById('conteudo') //atribuindo a uma variável o id do elemento a ser alterado
+
+            link.onclick = function (e) {//captura o evento do click e starta a função para pegar o conteudo do html linkado
+                e.preventDefault()//inibi a navegação após o click no link
+
+                fetch(link.getAttribute('wm-nav'))//função ajax que dispara a promise que obterá o conteúdo
+                    .then(resp => resp.text())//obtem o texto html referente o objeto linkado
+                    .then(html => conteudo.innerHTML = html)//atribui ao elemento conteudo o html recuperado
+
+            }
+        })
+    </script>
+</body>
+
+</html>
